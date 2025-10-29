@@ -12,11 +12,12 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+    .glass{background:rgba(255,255,255,.06); backdrop-filter: blur(10px);}
     .bubble{max-width:85%; padding:.75rem 1rem; border-radius:1rem; margin:.25rem 0; font-size:.95rem; line-height:1.4}
     .left{background:#0b0f12; color:#e6f6ee; border:1px solid rgba(255,255,255,.1); border-top-left-radius:.5rem}
     .right{background:#18c37a; color:#082016; border-top-right-radius:.5rem; margin-left:auto}
     .typing{width:48px; height:20px; display:inline-flex; align-items:center; gap:4px}
-    .dot{width:6px; height:6px; border-radius:999px; background:rgba(255,255,255,.9); opacity:.4; animation: b 1s infinite}
+    .dot{width:6px; height:6px; border-radius:999px; background:rgba(255,255,255,.9); opacity:.4; animation:b 1s infinite}
     .dot:nth-child(2){animation-delay:.15s} .dot:nth-child(3){animation-delay:.3s}
     @keyframes b {0%{opacity:.2} 50%{opacity:1} 100%{opacity:.2}}
     .btn{padding:.65rem 1rem; border-radius:.8rem; font-weight:600; border:1px solid rgba(255,255,255,.12)}
@@ -26,7 +27,7 @@
 </head>
 <body class="bg-neutral-950 text-white">
   <header class="sticky top-0 z-30 border-b border-white/10 bg-neutral-950/80 backdrop-blur">
-    <div class="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <img src="diretor.jpg" class="w-9 h-9 rounded-lg object-cover ring-1 ring-white/15" alt="Maikon Ferreira da Silva"/>
         <div class="leading-tight">
@@ -35,110 +36,62 @@
         </div>
       </div>
       <a class="px-3 py-2 rounded-lg bg-emerald-500 text-neutral-900 font-semibold hover:opacity-90" target="_blank"
-         href="https://wa.me/5533999681640?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20e%20quero fazer minha simulação de desconto">WhatsApp</a>
+         href="https://wa.me/5533999681640?text=quero%20fazer%20minha%20simula%C3%A7%C3%A3o%20de%20desconto">WhatsApp</a>
     </div>
   </header>
 
-  <main class="max-w-3xl mx-auto px-4 pb-28">
-    <section id="chat" class="mt-6 md:mt-10 space-y-2"></section>
+  <main class="max-w-6xl mx-auto px-4 pb-28">
+    <section class="mt-8 grid md:grid-cols-[120px,1fr] gap-5 items-center">
+      <img src="diretor.jpg" alt="Maikon Ferreira da Silva" class="w-28 h-28 md:w-32 md:h-32 rounded-2xl object-cover ring-2 ring-white/10">
+      <div class="text-center md:text-left">
+        <h1 class="text-3xl md:text-4xl font-extrabold">Economize até <span class="text-emerald-400">20%</span> na conta de luz</h1>
+        <p class="text-white/70 mt-2">Representante Oficial iGreen — atendimento direto com Maikon Ferreira da Silva.</p>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a href="https://wa.me/5533999681640?text=quero%20fazer%20minha%20simula%C3%A7%C3%A3o%20de%20desconto" target="_blank" class="btn btn-prim">Quero fazer minha simulação de desconto</a>
+          <a href="#chat" class="btn btn-alt">Como funciona</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-8 grid md:grid-cols-3 gap-4">
+      <div class="glass rounded-2xl p-5 border border-white/10">
+        <h3 class="font-semibold">Economia real</h3>
+        <p class="text-white/70 text-sm mt-1">Até 20% de desconto direto na fatura.</p>
+      </div>
+      <div class="glass rounded-2xl p-5 border border-white/10">
+        <h3 class="font-semibold">Sem fidelidade</h3>
+        <p class="text-white/70 text-sm mt-1">Cancele quando quiser, sem multa.</p>
+      </div>
+      <div class="glass rounded-2xl p-5 border border-white/10">
+        <h3 class="font-semibold">Assinatura digital</h3>
+        <p class="text-white/70 text-sm mt-1">Tudo online, com validade jurídica.</p>
+      </div>
+    </section>
+
+    <section id="chat" class="mt-10 max-w-3xl mx-auto space-y-2"></section>
   </main>
 
   <div class="fixed-cta py-3">
-    <div class="max-w-3xl mx-auto px-4 flex items-center gap-2">
+    <div class="max-w-6xl mx-auto px-4 flex items-center gap-2">
       <input id="cidade" class="flex-1 px-3 py-2 rounded-lg bg-white/5 text-white placeholder-white/50 border border-white/10" placeholder="Cidade (ex.: Governador Valadares)">
       <input id="documento" class="w-52 px-3 py-2 rounded-lg bg-white/5 text-white placeholder-white/50 border border-white/10" placeholder="CNPJ/CPF (opcional)">
-      <button id="gerar" class="btn btn-prim">Gerar proposta</button>
+      <button id="gerar" class="btn btn-prim">Quero fazer minha simulação de desconto</button>
     </div>
   </div>
 
-  <a class="fixed right-4 bottom-24" href="https://wa.me/5533999681640?text=Ol%C3%A1!%20quero fazer minha simulação de desconto"
+  <a class="fixed right-4 bottom-24" href="https://wa.me/5533999681640?text=quero%20fazer%20minha%20simula%C3%A7%C3%A3o%20de%20desconto"
      target="_blank" aria-label="WhatsApp"><img src="whats.svg" class="w-14 h-14 drop-shadow-xl" alt="WhatsApp"/></a>
 
 <script>
 const chat = document.getElementById('chat');
-
-function addLeft(html) {
-  const div = document.createElement('div');
-  div.className = 'bubble left';
-  div.innerHTML = html;
-  chat.appendChild(div);
-  chat.scrollTop = chat.scrollHeight;
-}
-
-function addRight(text) {
-  const div = document.createElement('div');
-  div.className = 'bubble right';
-  div.textContent = text;
-  chat.appendChild(div);
-  chat.scrollTop = chat.scrollHeight;
-}
-
-function typing(ms=900) {
-  return new Promise(resolve => {
-    const wrap = document.createElement('div');
-    wrap.className = 'bubble left';
-    const t = document.createElement('div');
-    t.className='typing';
-    t.innerHTML='<span class="dot"></span><span class="dot"></span><span class="dot"></span>';
-    wrap.appendChild(t);
-    chat.appendChild(wrap);
-    chat.scrollTop = chat.scrollHeight;
-    setTimeout(()=>{ wrap.remove(); resolve(); }, ms);
-  });
-}
-
-async function flow() {
-  addLeft('Olá! Eu sou <b>Maikon Ferreira da Silva</b>, Representante Oficial iGreen. 🙂');
-  await typing();
-  addLeft('Posso te explicar <b>rapidinho</b> como pagar até <b>20% a menos</b> na conta de luz, sem obras e sem fidelidade.');
-  await typing(700);
-  addLeft('Você é:');
-  const btns = document.createElement('div');
-  btns.className = 'flex flex-wrap gap-2';
-  btns.innerHTML = `
-    <button class="btn btn-prim" data-v="Empresa/MEI">Empresa / MEI</button>
-    <button class="btn btn-alt" data-v="Residencial">Residencial</button>
-  `;
-  chat.appendChild(btns);
-  chat.scrollTop = chat.scrollHeight;
-
-  let perfil = await new Promise(resolve=>{
-    btns.querySelectorAll('button').forEach(b=> b.onclick = ()=> resolve(b.dataset.v));
-  });
-  btns.remove();
-  addRight(perfil);
-
-  await typing(700);
-  addLeft('Perfeito! Vou te mandar a simulação <b>sem custo</b> pelo WhatsApp. Antes, escolha:');
-  const btns2 = document.createElement('div');
-  btns2.className = 'flex flex-wrap gap-2';
-  btns2.innerHTML = `
-    <button class="btn btn-prim" data-v="Quero entender como funciona">Quero entender como funciona</button>
-    <button class="btn btn-alt" data-v="Quero só simular agora">Quero só simular agora</button>
-  `;
-  chat.appendChild(btns2);
-  chat.scrollTop = chat.scrollHeight;
-
-  let interesse = await new Promise(resolve=>{
-    btns2.querySelectorAll('button').forEach(b=> b.onclick = ()=> resolve(b.dataset.v));
-  });
-  btns2.remove();
-  addRight(interesse);
-
-  if (interesse.includes('funciona')) {
-    await typing();
-    addLeft('Funciona assim: <br>1) Você me envia a UC/CPF/CNPJ;<br>2) Eu verifico elegibilidade e retorno a simulação;<br>3) Se gostar, assinamos <b>eletronicamente</b> e em 7–10 dias a ativação acontece.');
-  }
-  await typing(700);
-  addLeft('Para finalizar, preencha <b>cidade</b> e (se quiser) <b>CNPJ/CPF</b> ali embaixo e clique em <b>Gerar proposta</b>. Eu te atendo no Whats de imediato.');
-}
-
-flow();
-
+function addLeft(html){const d=document.createElement('div');d.className='bubble left';d.innerHTML=html;chat.appendChild(d);chat.scrollTop=chat.scrollHeight;}
+function addRight(t){const d=document.createElement('div');d.className='bubble right';d.textContent=t;chat.appendChild(d);chat.scrollTop=chat.scrollHeight;}
+function typing(ms=900){return new Promise(r=>{const w=document.createElement('div');w.className='bubble left';w.innerHTML='<div class="typing"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>';chat.appendChild(w);chat.scrollTop=chat.scrollHeight;setTimeout(()=>{w.remove();r();}},ms));}
+(async function flow(){addLeft('Olá! Eu sou <b>Maikon Ferreira da Silva</b>, Representante Oficial iGreen. 🙂');await typing();addLeft('Posso te explicar <b>rapidinho</b> como pagar até <b>20% a menos</b> sem obras e sem fidelidade.');await typing(700);addLeft('Você é:');const b=document.createElement('div');b.className='flex flex-wrap gap-2';b.innerHTML=`<button class="btn btn-prim" data-v="Empresa/MEI">Empresa / MEI</button><button class="btn btn-alt" data-v="Residencial">Residencial</button>`;chat.appendChild(b);let perfil=await new Promise(s=>b.querySelectorAll('button').forEach(x=>x.onclick=()=>s(x.dataset.v)));b.remove();addRight(perfil);await typing(700);addLeft('Perfeito! Vou te mandar a simulação <b>sem custo</b> pelo WhatsApp. Antes, escolha:');const b2=document.createElement('div');b2.className='flex flex-wrap gap-2';b2.innerHTML=`<button class="btn btn-prim" data-v="Quero entender como funciona">Quero entender como funciona</button><button class="btn btn-alt" data-v="Quero só simular agora">Quero só simular agora</button>`;chat.appendChild(b2);let interesse=await new Promise(s=>b2.querySelectorAll('button').forEach(x=>x.onclick=()=>s(x.dataset.v)));b2.remove();addRight(interesse);if(interesse.includes('funciona')){await typing();addLeft('Funciona assim: <br>1) Você me envia a UC/CPF/CNPJ;<br>2) Eu verifico elegibilidade e retorno a simulação;<br>3) Se gostar, assinamos <b>eletronicamente</b> e em 7–10 dias a ativação acontece.');}await typing(700);addLeft('No rodapé, preencha <b>cidade</b> e (opcional) <b>CNPJ/CPF</b> e clique em <b>Quero fazer minha simulação de desconto</b>. Eu te atendo no Whats imediatamente.');})();
 document.getElementById('gerar').onclick = () => {
   const cidade = document.getElementById('cidade').value.trim();
   const doc = document.getElementById('documento').value.trim();
-  let texto = `Olá, Maikon Ferreira da Silva! Vim pela página de proposta e quero fazer minha simulação de desconto. Cidade: ${cidade or 'não informado'}. Documento: ${doc or 'não informado'}.`;
+  const texto = `Olá, Maikon Ferreira da Silva! Vim pela página de proposta. Cidade: ${cidade || 'não informado'}. Documento: ${doc || 'não informado'}. Quero fazer minha simulação de desconto.`;
   const url = "https://wa.me/5533999681640?text=" + encodeURIComponent(texto);
   window.open(url, '_blank');
 };
